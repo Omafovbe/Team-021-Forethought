@@ -22,21 +22,6 @@ consultantSchema.methods.generateAuthToken = function () {
   return token;
 }
 
-function validateConsultant(consultant) {
-  const schema = {
-    firstname: Joi.string().max(50).required(),
-    lastname: Joi.string().max(50).required(),
-    email: Joi.string().email().max(255).required().lowercase(),
-    password: Joi.string().min(6).max(255).required().strict(),
-    phone: Joi.string().min(11).max(15).required(),
-    certification: Joi.array(),
-    workplace: Joi.string()
-  }
-
-  return Joi.validate(consultant, schema);
-}
-
 const Consultant = mongoose.model('Consultant', consultantSchema);
 
 exports.Consultant = Consultant;
-exports.validateConsultant = validateConsultant;

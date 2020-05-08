@@ -21,18 +21,5 @@ userSchema.methods.generateAuthToken = function(){
   return token;
 }
 
-function validateUser(user){
-  const schema = {
-    firstname: Joi.string().max(50).required(),
-    lastname: Joi.string().max(50).required(),
-    email: Joi.string().email().max(255).lowercase().required(),
-    password: Joi.string().min(6).max(255).required(),
-    phone: Joi.string().min(11).max(15).required(),
-    birth_date: Joi.date()
-  }
-
-  return Joi.validate(user,schema);
-}
-
 exports.User = mongoose.model('User', userSchema);
-exports.validateUser = validateUser;
+
