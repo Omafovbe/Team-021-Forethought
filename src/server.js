@@ -7,6 +7,7 @@ const usersRoute = require('./routes/users')
 const consultantsRoute = require('./routes/consultants')
 const authRoute = require('./routes/auth');
 
+
 const apiPort = process.env.PORT || 4001;
 
 const app = express();
@@ -24,7 +25,8 @@ app.use('/api/consultants',consultantsRoute);
 //Handle login: users and consultants
 app.use('/api/auth',authRoute);
 
-app.get('/', (req, res) => res.send('Hello World!'));
+
+app.get('/', (req, res) => res.send('#BuildForSDG'));
 
 
 // Start listening to the app port to handle request
