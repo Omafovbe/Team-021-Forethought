@@ -2,7 +2,7 @@
 
 require('dotenv').config();
 
-const mongoose = require('moongoose');
+const mongoose = require('mongoose');
 
 // Declare promise globally to be used when connecting to the database
 mongoose.Promise = global.Promise;
