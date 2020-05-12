@@ -1,17 +1,21 @@
-const moongoose = require('moongoose');
+const mongoose = require('mongoose');
 
-const { Schema } = moongoose;
+const { Schema } = mongoose;
 
 const mentalTestSchema = new Schema({
-  user_id: { type: moongoose.Schema.Types.ObjectId, ref: 'User' },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   ques_1: { type: Number, required: true },
   ques_2: { type: Number, required: true },
   ques_3: { type: Number, required: true },
   ques_4: { type: Number, required: true },
   ques_5: { type: Number, required: true },
   ques_6: { type: Number, required: true },
-  testResult: { type: Number, default: 0 }
+  testResult: { type: Number, default: 0 },
+  severity: {
+    grade: Number,
+    class: String
+  }
 },
 { timestamps: true });
 
-module.exports = moongoose.model('mentalTest', mentalTestSchema);
+module.exports = mongoose.model('MentalTest', mentalTestSchema);

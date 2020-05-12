@@ -1,20 +1,22 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 require('./services/dbCon');
+const testRouter = require('./routes/test');
 
 const apiPort = process.env.PORT || 4001;
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.use(cors());
 
+// API Routes
+app.use('/api/test', testRouter);
 
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => res.send('#BuildForSDG'));
 
 
 // Start listening to the app port to handle request
