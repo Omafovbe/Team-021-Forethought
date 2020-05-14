@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const Joi = require('joi');
 const jwt = require('jsonwebtoken');
 
 const { Schema } = mongoose;
@@ -12,16 +11,16 @@ const consultantSchema = new Schema({
   },
   password: { type: String, required: true },
   phone: { type: String, required: true },
+  location: { type: String, required: true },
   certification: { type: Array },
   workplace: { type: String }
 },
-  { timestamps: true });
+{ timestamps: true });
 
-consultantSchema.methods.generateAuthToken = function () {
+consultantSchema.methods.generateAuthToken = () => {
+  // eslint-disable-next-line no-underscore-dangle
   const token = jwt.sign({ id: this._id }, process.env.JWT_PRIVATE_KEY);
   return token;
-}
+};
 
-const Consultant = mongoose.model('Consultant', consultantSchema);
-
-exports.Consultant = Consultant;
+module.exports = mongoose.model('Consultant', consultantSchema);

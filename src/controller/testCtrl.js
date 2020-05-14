@@ -1,8 +1,17 @@
-const MentalStatus = require('../model/mentalTestSchema');
-const Users = require('../model/userSchema');
+const MentalStatus = require('../models/mentalTestSchema');
+const Users = require('../models/user');
 
+/** Severity of a mental illness
+ *
+ *  @description - Returns an object of the grade and class of a mental illness
+ *
+ *  @param {number} mGrade - A number between 0 - 2
+ *  @param {string} mClass - describes the severity of the case as Mild, Moderate or Severe
+ */
 const severityCase = (mGrade, mClass) => ({ grade: mGrade, class: mClass });
 
+
+// Calculate, save and return the mental state of a user
 const testCalculate = async (reqParam) => {
   // Extract user ID and questions...
   const { userId, ...questAnswers } = reqParam;
