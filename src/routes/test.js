@@ -2,8 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 const validation = require('../services/validation');
-const verifyMW = require('../services/validate');
-const { testCalculate, getMentalResults } = require('../controller/testController');
+const validateMW = require('../services/validate');
+const { testCalculate, getMentalResults } = require('../controller/testCtrl');
 
 // Know the user mental health status from test taken and saved to database
 const userTestStatus = (req, res) => {
@@ -21,7 +21,7 @@ const getResults = (req, res) => {
 
 
 // Route to know the mental status and save test result
-router.post('', verifyMW(validation.testValidSchema), userTestStatus);
+router.post('', validateMW(validation.vTest), userTestStatus);
 
 // Display test result for a user
 router.get('/results/:id', getResults);

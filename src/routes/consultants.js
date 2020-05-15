@@ -1,39 +1,28 @@
 const express = require('express');
+
 const router = express.Router();
-const bcrypt = require('bcrypt');
-const _ = require('lodash');
-const mongoose = require('mongoose');
-const { Consultant } = require('../models/consultant');
-const { validateConsultant } = require('../middleware/validation');
+const { vConsultant } = require('../services/validation');
+const validateMW = require('../services/validate');
+const { authenticate, create } = require('../controller/consultantCtrl');
 
-router.post('/', async (req, res) => {
+// Authenticate login
+const login = (req, res, next) => {
+  authenticate(req.body)
+    .then((consultant) => (consultant ? res.json(consultant) : res.status(400).json({ message: 'Email or password is incorrect' })))
+    .catch((error) => next(error));
+};
 
-  //Validates the request body
-  const { error } = validateConsultant(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+// Register new consultant
+const register = (req, res, next) => {
+  create(req.body)
+    .then(() => res.json({ message: 'Registered successfully' }))
+    .catch((error) => next(error));
+};
 
-  //Checks if consultant already exists
-  let consultant = await Consultant.findOne({ email: req.body.email });
-  if (consultant) return res.status(400).send('consultant already registered');
+// Consultant Routes
+router.post('/authenticate', validateMW(vConsultant), login);
 
-  try {
-    consultant = new Consultant(_.pick(req.body, ['firstname', 'lastname', 'email', 'password', 'phone', 'certification', 'workplace']));
-    const salt = await bcrypt.genSalt(10);
+router.post('/register', validateMW(vConsultant), register);
 
-    //Hashes consultant's password
-    consultant.password = await bcrypt.hash(consultant.password, salt);
-    await consultant.save();
-
-    //Generates token and returns it as a header for auto auth
-    const token = consultant.generateAuthToken();
-    res.header('x-auth-token', token).send(_.pick(consultant, ['firstname', 'lastname', 'email', 'phone', 'certification', 'workplace']));
-
-  } catch (error) {
-
-    res.status(500).send(`Consultant could not be saved: ${error}`)
-
-  }
-
-});
-
+// Export Router
 module.exports = router;
