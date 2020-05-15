@@ -2,7 +2,10 @@
   "name": "js-starter",
   "version": "0.0.1",
   "description": "A boilerplate for starting js code",
-  "keywords": ["js-starter", "boilerplate"],
+  "keywords": [
+    "js-starter",
+    "boilerplate"
+  ],
   "private": false,
   "main": "src/server.js",
   "types": "dist/index.d.ts",
@@ -30,12 +33,15 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
     "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.9.12"
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
@@ -53,5 +59,7 @@
     "nodemon": "^2.0.3",
     "parcel-bundler": "^1.12.4"
   },
-  "browserslist": ["last 1 Chrome versions"]
+  "browserslist": [
+    "last 1 Chrome versions"
+  ]
 }

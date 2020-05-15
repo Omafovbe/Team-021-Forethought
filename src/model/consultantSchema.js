@@ -1,6 +1,6 @@
-const moongoose = require('moongoose');
+const mongoose = require('mongoose');
 
-const { Schema } = moongoose;
+const { Schema } = mongoose;
 
 const consultantSchema = new Schema({
   firstname: { type: String, required: true },
@@ -15,4 +15,4 @@ const consultantSchema = new Schema({
 },
 { timestamps: true });
 
-module.exports = moongoose.model('Consultant', consultantSchema);
+module.exports = mongoose.model('Consultant', consultantSchema);

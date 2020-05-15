@@ -7,12 +7,12 @@ const mongoose = require('mongoose');
 // Declare promise globally to be used when connecting to the database
 mongoose.Promise = global.Promise;
 
-// Remote mongodb connection "either of both can be use"
+// Remote mongodb connection url
 const mongoDbUrl = process.env.MONGODB_URL;
 
-// Mongo connection code
+// Mongo connection
 mongoose.connect(mongoDbUrl,
-  { useNewUrlParser: true, useUnifiedTopology: true }).catch((err) => {
+  { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true }).catch((err) => {
   console.log('MongoDB connection error:', err.message);
 });
 
