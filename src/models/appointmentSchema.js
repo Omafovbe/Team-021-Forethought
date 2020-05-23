@@ -5,8 +5,9 @@ const { Schema } = mongoose;
 const appointmentSchema = new Schema({
   consultantId: { type: mongoose.Schema.Types.ObjectId, ref: 'Consultant' },
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  scheduled_date: Date,
-  scheduled_time: String
+  scheduledDate: Date,
+  scheduledTime: String,
+  appointmentStatus: { type: String, default: 'pending' }
 
 },
 { timestamps: true });
