@@ -9,12 +9,7 @@ const { createConsultant,
     getAllAppointmentsByConsultantID,
     userAppointmentById } = require('../controller/appointmentCtrl');
 
-// Authenticate login
-const login = (req, res, next) => {
-  authenticate(req.body)
-    .then((consultant) => (consultant ? res.json(consultant) : res.status(400).json({ message: 'Email or password is incorrect' })))
-    .catch((error) => next(error));
-};
+
 
 // Register new Appointment
 const register = (req, res, next) => {
