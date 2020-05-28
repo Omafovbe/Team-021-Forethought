@@ -1,8 +1,9 @@
 require('dotenv').config();
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const jwt = require('./services/auth');
-require('./services/dbCon');
+// require('./services/dbCon');
 
 
 const testRouter = require('./routes/test');
@@ -14,7 +15,7 @@ const apiPort = process.env.PORT || 4001;
 
 const app = express();
 
-app.use(jwt);
+// app.use(jwt);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
@@ -31,6 +32,11 @@ app.use('/api/consultants', consultantsRoute);
 
 app.get('/', (req, res) => res.send('#BuildForSDG'));
 
+app.use(express.static(path.join(__dirname, 'static')));
+
+app.get('/screening', (req, res) => {
+  res.sendFile(path.join(__dirname, "views/interactive", "index.html"));
+});
 
 // Start listening to the app port to handle request
 app.listen(apiPort, () => {
