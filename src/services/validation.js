@@ -38,6 +38,20 @@ const vLogin = Joi.object({
   password: Joi.string().min(6).required().strict()
 });
 
+const vAppointment = joi.object ({
+  
+    consultantId: Joi.string().required(),
+    userId: Joi.string().required(),
+    scheduledDate: Joi.string().required().strict(),
+    scheduledTime: Joi.string().required().strict()
+    
+  });
+
+  
+
+
+
+
 module.exports = {
   vTest,
   vUser,
