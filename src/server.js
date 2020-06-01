@@ -4,9 +4,9 @@ require('dotenv').config();
 const app = require('./app');
 
 const apiPort = process.env.PORT || 4001;
+
 // Database connection
 require('./services/dbCon');
-
 
 // Start listening to the app port to handle request
 app.listen(apiPort, () => {
