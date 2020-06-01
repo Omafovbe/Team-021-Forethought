@@ -19,8 +19,7 @@ const testCalculate = async (reqParam) => {
   // Search for the user with the ID
   const user = await Users.findById(userId);
 
-
-  if (user.length) {
+  if (Array.isArray(user) || user.length) {
     // Extract answers from the questions in the request body
     const answerValues = Object.values(questAnswers);
 

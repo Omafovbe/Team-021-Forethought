@@ -18,6 +18,7 @@ const vUser = Joi.object({
   lastname: Joi.string().max(50).required(),
   email: Joi.string().email().lowercase().required(),
   password: Joi.string().min(6).required(),
+  location: Joi.string().required(),
   phone: Joi.string().min(11).max(15).required(),
   birth_date: Joi.date()
 });

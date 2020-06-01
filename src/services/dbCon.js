@@ -1,5 +1,3 @@
-// Import express web framework for node.js
-
 require('dotenv').config();
 
 const mongoose = require('mongoose');
