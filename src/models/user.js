@@ -20,10 +20,4 @@ const userSchema = new Schema({
 { timestamps: true });
 
 
-userSchema.methods.generateAuthToken = () => {
-  // eslint-disable-next-line no-underscore-dangle
-  const token = jwt.sign({ id: this._id }, process.env.JWT_PRIVATE_KEY, { expiresIn: '1h' });
-  return token;
-};
-
 module.exports = mongoose.model('User', userSchema);

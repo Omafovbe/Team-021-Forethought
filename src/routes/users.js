@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const validateMW = require('../services/validate');
 const { authenticate, create } = require('../controller/userCtrl');
-const { vUser } = require('../services/validation');
+const { vUser, vLogin } = require('../services/validation');
 
 // Authenticate user login
 const login = (req, res, next) => {
@@ -21,7 +21,7 @@ const register = (req, res, next) => {
 
 
 // All user routes with validation
-router.post('/authenticate', validateMW(vUser), login);
+router.post('/authenticate', validateMW(vLogin), login);
 
 router.post('/register', validateMW(vUser), register);
 

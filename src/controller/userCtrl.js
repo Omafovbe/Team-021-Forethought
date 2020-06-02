@@ -1,14 +1,19 @@
+/* eslint-disable no-underscore-dangle */
+require('dotenv').config();
 const bcrypt = require('bcrypt');
 const _ = require('lodash');
+const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
 const authenticate = async ({ email, password }) => {
   const user = await User.findOne({ email });
-
+  const userId = user._id;
   let token = '';
-  if (user && bcrypt.compare(password, user.password)) { token = user.generateAuthToken(); }
+  if (user && bcrypt.compareSync(password, user.password)) {
+    token = jwt.sign({ id: user._id }, process.env.JWT_PRIVATE_KEY, { expiresIn: '1h' });
+  }
 
-  return { token };
+  return { userId, token };
 };
 
 
@@ -26,7 +31,7 @@ const create = async (reqParam) => {
     // Save to database
     await user.save();
   } catch (error) {
-    throw new Error(`User could not be saved: ${error}`);
+    throw new Error(`User could not be saved - ${error}`);
   }
 };
 
