@@ -2,6 +2,7 @@
   "conventionalCommits.scopes": [
     "MongoDB",
     "MentalTest",
-    "API-Routes"
+    "API-Routes",
+    "messageSchema"
   ]
 }
