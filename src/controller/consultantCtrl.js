@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const Messages = require('../models/messageSchema');
 const User = require('../models/user');
 const Consultant = require('../models/consultant');
@@ -10,7 +11,7 @@ const authenticate = async ({ email, password }) => {
   const consultantId = consultant._id;
   let token = '';
   if (consultant && bcrypt.compare(password, consultant.password)) {
-    token = consultant.generateAuthToken();
+    token = jwt.sign({ id: consultant._id }, process.env.JWT_PRIVATE_KEY, { expiresIn: '1h' });
   }
 
   return { consultantId, token };
