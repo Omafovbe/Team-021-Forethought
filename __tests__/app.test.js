@@ -1,13 +1,15 @@
-import app from '../src/index';
+const request = require('supertest');
+const app = require('../src/app');
 
 describe('app module', () => {
-  test('it exists', async () => {
-    expect(app).toBeDefined();
-  });
-
-  test('it returns program name with SDGs', async () => {
-    const result = await app();
-    const sdgPos = (result || '').indexOf('SDG');
+  it('returns program name with SDGs', async () => {
+    const result = await request(app).get('/');
+    const sdgPos = (result.text || '').indexOf('SDG');
     expect(sdgPos).toBeGreaterThanOrEqual(0);
   });
+
+  // it('returns a test result', async () => {
+  //   const result = await request(app)
+  //   .post('/api/test/')
+  // });
 });

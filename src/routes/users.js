@@ -2,8 +2,10 @@ const express = require('express');
 
 const router = express.Router();
 const validateMW = require('../services/validate');
+
 const userHandler = require('../controller/userCtrl');
-const { vUser } = require('../services/validation');
+const { authenticate, create } = require('../controller/userCtrl');
+const { vUser, vLogin } = require('../services/validation');
 
 // Authenticate user login
 const login = (req, res, next) => {
@@ -38,7 +40,7 @@ const getMessages = (req, res) => {
     .catch((error) => res.json(error));
 };
 // All user routes with validation
-router.post('/authenticate', validateMW(vUser), login);
+router.post('/authenticate', validateMW(vLogin), login);
 
 router.post('/register', validateMW(vUser), register);
 router.post('/message', insertMessage);
