@@ -3,6 +3,8 @@
     "MongoDB",
     "MentalTest",
     "API-Routes",
+    "messageSchema",
     "Backend-Test"
+
   ]
 }

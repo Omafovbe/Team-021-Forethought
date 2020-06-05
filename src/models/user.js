@@ -13,7 +13,6 @@ const userSchema = new Schema({
   phone: { type: String, required: true },
   location: { type: String, required: true },
   birthDate: Date,
-  consultantId: { type: String, default: 'pending' },
   userLatitude: { type: Number, required: true },
   userLongitude: { type: Number, required: true }
 },
