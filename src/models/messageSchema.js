@@ -5,7 +5,7 @@ const { Schema } = mongoose;
 const messageSchema = new Schema({
   consultantId: { type: mongoose.Schema.Types.ObjectId, ref: 'Consultant' },
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  msgDate: Date,
+  msgDate: { type: Date, default: Date.now() },
   message: String
 
 },

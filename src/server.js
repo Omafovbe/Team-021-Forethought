@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const jwt = require('./services/auth');
+// const jwt = require('./services/auth');
 require('./services/dbCon');
 
 
@@ -11,12 +11,11 @@ const consultantsRoute = require('./routes/consultants');
 const appointmentRoute = require('./routes/appointment');
 
 
-
 const apiPort = process.env.PORT || 4001;
 
 const app = express();
 
-app.use(jwt);
+// app.use(jwt);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());

@@ -1,6 +1,10 @@
 const bcrypt = require('bcrypt');
 const _ = require('lodash');
+// const mongoose = require('mongoose');
 const User = require('../models/user');
+const Consultant = require('../models/consultant');
+const Messages = require('../models/messageSchema');
+
 
 const authenticate = async ({ email, password }) => {
   const user = await User.findOne({ email });
@@ -30,7 +34,50 @@ const create = async (reqParam) => {
   }
 };
 
+const contactedConsultant = async (reqId) => {
+  // const { ObjectId } = mongoose.Types;
+  const consults = await Messages.find({ userId: reqId }).distinct('consultantId');
+  const result = await Consultant.find({ _id: { $in: consults } }, {
+    firstname: 1, lastname: 1, email: 1, phone: 1
+  });
+
+  /*  await Messages.aggregate([
+    {
+      $lookup: {
+        from: 'consultants', localField: 'consultantId',
+  foreignField: 'consultantId', as: 'consultant'
+      }
+    },
+    { $match: { userId: ObjectId(reqId) } },
+    { $group: { _id: '$consultantId', count: { $sum: 1 } } },
+    // { $unwind: '$consultant' },
+    {
+      $project: {
+        _id: 1, count: 1, consultant: 1
+      }
+    }
+
+  ]); */
+
+  return result;
+};
+
+const addMessage = async (reqParam) => {
+  const message = new Messages(reqParam);
+  const res = message.save();
+  return res;
+};
+
+const messagesByConsultant = async ({ userId, consultantId }) => {
+  const conversations = await Messages.find({ userId, consultantId }, { msgDate: 1, message: 1 })
+    .sort({ msgDate: 1 });
+  return conversations;
+};
+
 module.exports = {
   authenticate,
-  create
+  create,
+  groupByConsultant: contactedConsultant,
+  addMessage,
+  messagesByConsultant
 };
