@@ -3,12 +3,13 @@ const express = require('express');
 const router = express.Router();
 const { vAppointment } = require('../services/validation');
 const validateMW = require('../services/validate');
-const { createConsultant,
-    closestConsultantByLatitudeAndLongitude,
-    assignConsultantToUsers,
-    getAllAppointmentsByConsultantID,
-    userAppointmentById } = require('../controller/appointmentCtrl');
-
+const {
+  createConsultant,
+  closestConsultantByLatitudeAndLongitude,
+  assignConsultantToUsers,
+  getAllAppointmentsByConsultantID,
+  userAppointmentById
+} = require('../controller/appointmentCtrl');
 
 
 // Register new Appointment

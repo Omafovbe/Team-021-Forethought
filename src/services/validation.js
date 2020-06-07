@@ -31,9 +31,7 @@ const vConsultant = Joi.object({
   password: Joi.string().min(6).required().strict(),
   phone: Joi.string().min(11).max(15).required(),
   certification: Joi.array().single().items(Joi.string()),
-  workplace: Joi.string(),
-  workplaceLongitude: Joi.number(),
-  workplaceLatitude: Joi.number()
+  workplace: Joi.string()
 });
 
 const vLogin = Joi.object({
