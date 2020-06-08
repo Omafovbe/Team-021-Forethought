@@ -5,22 +5,19 @@ barebones setup for JavaScript / Node projects replace this with a one-liner phr
 
 ## About
 
-What is this project about. Ok to enrich here or the section above it with an image. 
+This is project Forethought, team-021's sustainable development goals solution to promoting good health and well-being by linking mental health specialists to our community.
 
-Once this repo has been setup on Codacy by the TTL, replace the above badge with the actual one from the Codacy dashboard, and add the code coverage badge as well. This is mandatory
+![App Mockups](/login.png)
+![Intro App Mockup](/intro.png)
 
-This is a simple JavaScript starter repo template for setting up your project. The setup contains
-
-- Jest: For runnung tests. We strongly recommend that JavaScript projects use Jest
-
-- Eslint & Prettier: For formatting code to match ESlint AirBnB coding standard. You might need to install the ESlint and Prettier plugins for your code editor to make the most of these utilities
+Codacy badge has been added above.
 
 ## Why
 
-Talk about what problem this solves, what SDG(s) and SGD targets it addresses and why these are imoirtant
+This project tackles the third sustainable development goal of good health and well-being by linking mental health specialists to our communities. Mental illness is stigmatized in our communities which has reduced health-seeking behaviour among those affected. People fail to realize that mental illness is an health condition of the mind which changes thinking, emotions and behaviour. With proper treatment, mentally ill individuals can return back to their communities and contribute meaningfully to the society. Our project aims to facilitate the process of getting health care at the community level.
 
 ## Usage
- How would someone use what you have built, include URLs to the deployed app, service e.t.c when you have it setup
+Users are to log on to the url provided:
 
 
 ## Setup
@@ -48,6 +45,16 @@ This starter uses [Parcel](https://parceljs.org/getting_started.html) as the bun
 
 List the team behind this project. Their names linked to their Github, LinkedIn, or Twitter accounts should siffice. Ok to signify the role they play in the project, including the TTL and mentor
 
+##### Adeyosola Mustapha - https://github.com/Adeyossy - Team Technical Lead, Frontend Lead, UI/UX Designer
+##### Omafovbe Imonikosaye - https://github.com/Omafovbe - Assistant TTL, Backend Lead
+##### Frederick Atabo - https://github.com/fredatabo - Backend Developer
+##### Farouq Umar - https://github.com/farouqu - Backend Developer
+##### Olalekan Awe - https://github.com/awelekan - UI/UX Designer
+##### Oluwafemi Opanuga - https://github.com/femathic - UI/UX Designer
+##### Samuel Nwankwo - https://github.com/saminwankwo - Team Member (Frontend Developer)
+##### Muhammad - https://github.com/femathic - Team Member
+
+
 ## Contributing
 If this project sounds interesting to you and you'd like to contribute, thank you!
 First, you can send a mail to buildforsdg@andela.com to indicate your interest, why you'd like to support and what forms of support you can bring to the table, but here are areas we think we'd need the most help in this project :
@@ -57,9 +64,9 @@ First, you can send a mail to buildforsdg@andela.com to indicate your interest, 
 
 ## Acknowledgements
 
-Did you use someone else’s code?
+Did you use someone else’s code? NO
 Do you want to thank someone explicitly?
-Did someone’s blog post spark off a wonderful idea or give you a solution to nagging problem?
+Did someone’s blog post spark off a wonderful idea or give you a solution to nagging problem? NO
 
 It's powerful to always give credit.
 
