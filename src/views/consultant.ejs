@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('./partials/header.ejs') %>
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/consultant.css">
+    <title>Consultant: name goes here</title>
+</head>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <main>
+        <div class="container-fluid">
+            <div class="row buildforsdgs-consultant-header">
+                <div class="offset-lg-1 col-lg-2">
+                    <div class="consultant-profile-picture-container">
+                        <img src="/assets/images/consultant.jpg" alt="consultant profile picture" class="consultant-profile-picture mx-auto">
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="consultant-profile-details">
+                        <h1 class="consultant-profile-name">Jane Doe MD</h1>
+                        <h4 class="consultant-profile-hospital">St Saint Specialist Hospital</h4>
+                        <p class="consultant-profile-credentials">
+                            <span class="consultant-profile-credential"><%= "MBBS" %></span> | 
+                            <span class="consultant-profile-credential"><%= "FWACP" %></span> | 
+                            <span class="consultant-profile-credential"><%= "Ph.D" %></span> | 
+                        </p>
+                        <p><%= 1 %> Patient(s) managed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="offset-lg-2 col-lg-8">
+                    <%- include('./profile_fields.ejs') %>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

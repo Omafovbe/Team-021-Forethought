@@ -1,0 +1,56 @@
+nav#buildforsdgs-nav{
+    background-color: var(--buildforsdgs-primary-color);
+}
+
+nav a{
+    color: white;
+}
+
+.buildforsdgs-consultant-header{
+    background-color: var(--buildforsdgs-primary-color);
+}
+
+.row{
+    padding: 32px 0px;
+}
+
+.row > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.consultant-profile-picture-container{
+    width: 30vh;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    border-radius: 50%;
+}
+
+img.consultant-profile-picture{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+}
+
+div.consultant-profile-details{
+    color: white;
+}
+
+div.consultant-profile-details *{
+    margin-bottom: 4px;
+}
+
+.consultant-profile-hospital{
+    font-weight: 300;
+}
+
+.consultant-profile-credential{
+    /* color: var(--buildforsdgs-accent-color); */
+    letter-spacing: 1px;
+    font-weight: 100;
+}
