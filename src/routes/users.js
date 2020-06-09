@@ -4,7 +4,6 @@ const router = express.Router();
 const validateMW = require('../services/validate');
 
 const userHandler = require('../controller/userCtrl');
-const { authenticate, create } = require('../controller/userCtrl');
 const { vUser, vLogin } = require('../services/validation');
 
 // Authenticate user login
@@ -39,6 +38,7 @@ const getMessages = (req, res) => {
     .then((messages) => res.json(messages))
     .catch((error) => res.json(error));
 };
+
 // All user routes with validation
 router.post('/authenticate', validateMW(vLogin), login);
 

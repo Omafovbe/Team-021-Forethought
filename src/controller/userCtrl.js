@@ -17,7 +17,14 @@ const authenticate = async ({ email, password }) => {
     token = jwt.sign({ id: user._id }, process.env.JWT_PRIVATE_KEY, { expiresIn: '1h' });
   }
 
-  return { userId, token };
+  return {
+    userId,
+    firstname: user.firstname,
+    lastname: user.lastname,
+    phone: user.phone,
+    email: user.email,
+    token
+  };
 };
 
 
