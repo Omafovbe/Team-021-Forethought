@@ -1,5 +1,5 @@
 document.querySelectorAll('input').forEach((inputElement) => {
-    inputElement.addEventListener('blur', () => {
-        inputElement.classList.add('validation');
-    });
+  inputElement.addEventListener('blur', () => {
+    inputElement.classList.add('validation');
+  });
 });
