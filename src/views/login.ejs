@@ -1,11 +1,13 @@
 <div class="buildforsdgs-auth-card">
     <h5 class="text-center buildforsdgs-auth-header">Log In</h5>
-    <form class="" method="POST" action="/api/users/authenticate">
+    <form class="" method="POST" action="<%= url %>">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" pattern=".+@\w+\.\w+" required>
         <label for="password">Password</label>
         <input type="password" name="password" id="password" required>
         <input type="submit" value="Submit">
     </form>
-    <h6>Don't have an account? <a href="/auth?isNew=true" class="clickable">Sign Up</a></h6>
+    <% if(user) { %>
+        <h6>Don't have an account? <a href="/users/register" class="clickable">Sign Up</a></h6>
+    <% } %>
 </div>

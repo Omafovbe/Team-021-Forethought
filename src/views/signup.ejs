@@ -1,6 +1,6 @@
 <div class="buildforsdgs-auth-card">
     <h5 class="text-center buildforsdgs-auth-header">Create Account</h5>
-    <form class="" method="POST" action="/api/users/register">
+    <form class="" method="POST" action="<%= url %>">
         <label for="username">Username</label>
         <input type="text" name="username" pattern="\w+-?\w*" minlength="4" maxlength="20" id="username" required>
         <label for="email">Email</label>
@@ -11,5 +11,7 @@
         <input type="password" name="confirmPassword" id="confirmPassword" required>
         <input type="submit" value="Submit">
     </form>
-    <h6>Already have an account? <a href="/auth" class="clickable">Log In</a></h6>
+    <% if(user) { %>
+        <h6>Already have an account? <a href="/users/auth" class="clickable">Log In</a></h6>
+    <% } %>
 </div>
