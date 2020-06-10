@@ -34,13 +34,20 @@ const create = async (reqParam) => {
   if (user) throw new Error('User already registered');
 
   try {
-    user = new User(_.pick(reqParam, ['firstname', 'lastname', 'email', 'password', 'location', 'phone', 'birth_date']));
+    user = new User(_.pick(reqParam, ['firstname', 'lastname', 'email', 'password', 'phone']));
 
     // Hash user's password
     user.password = await bcrypt.hash(user.password, 10);
 
     // Save to database
-    await user.save();
+    const savedUser = await user.save();
+    return {
+      firstname: savedUser.firstname,
+      lastname: savedUser.lastname,
+      email: savedUser.email,
+      phone: savedUser.phone,
+      userId: savedUser._id
+    };
   } catch (error) {
     throw new Error(`User could not be saved - ${error}`);
   }

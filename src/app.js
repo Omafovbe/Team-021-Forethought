@@ -31,7 +31,7 @@ app.use('/api/test', testRouter);
 
 // User routes
 app.use('/api/users', usersRoute);
-app.use('/users', userUI);
+// app.use('/users', userUI);
 
 // Consultant routes
 app.use('/api/consultants', consultantsRoute);

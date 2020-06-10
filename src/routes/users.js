@@ -9,14 +9,18 @@ const { vUser, vLogin } = require('../services/validation');
 // Authenticate user login
 const login = (req, res, next) => {
   userHandler.authenticate(req.body)
-    .then((user) => (user ? res.json(user) : res.status(400).json({ message: 'Email or password is incorrect' })))
+    .then((user) => (user ? res.redirect('/screening') : res.status(400).json({ message: 'Email or password is incorrect' })))
     .catch((error) => next(error));
 };
 
 // Register a new user
 const register = (req, res, next) => {
   userHandler.create(req.body)
-    .then(() => res.json({ message: 'User registered successfully' }))
+    .then((user) => {
+      res.local = user;
+      // res.json({ message: 'User registered successfully' })
+      res.redirect('/screening');
+    })
     .catch((error) => next(error));
 };
 
