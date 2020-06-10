@@ -1,4 +1,5 @@
 const express = require('express');
+
 const router = express.Router();
 
 router.get('/users/auth', (req, res) => {
@@ -27,6 +28,7 @@ router.get('/consultants/auth', (req, res) => {
         url: '/api/consultants/authenticate',
         user: false
     });
+
 });
 
 module.exports = router;

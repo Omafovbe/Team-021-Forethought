@@ -4,12 +4,17 @@ const path = require('path');
 
 // const jwt = require('./services/auth');
 
+// Frontend Routes
 const authRoute = require('./routes/auth');
+
+// API Routes
 
 const testRouter = require('./routes/test');
 const usersRoute = require('./routes/users');
 const consultantsRoute = require('./routes/consultants');
 const appointmentRoute = require('./routes/appointment');
+
+// const userUI = require('./routes/auth');
 
 const app = express();
 
@@ -26,6 +31,7 @@ app.use('/api/test', testRouter);
 
 // User routes
 app.use('/api/users', usersRoute);
+app.use('/users', userUI);
 
 // Consultant routes
 app.use('/api/consultants', consultantsRoute);
