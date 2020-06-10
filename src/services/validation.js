@@ -18,9 +18,7 @@ const vUser = Joi.object({
   lastname: Joi.string().max(50).required(),
   email: Joi.string().email().lowercase().required(),
   password: Joi.string().min(6).required(),
-  location: Joi.string().required(),
-  phone: Joi.string().min(11).max(15).required(),
-  birth_date: Joi.date()
+  phone: Joi.string().min(11).max(15).required()
 });
 
 const vConsultant = Joi.object({
@@ -40,7 +38,6 @@ const vLogin = Joi.object({
 });
 
 const vAppointment = Joi.object({
-
   consultantId: Joi.string().required(),
   userId: Joi.string().required(),
   scheduledDate: Joi.string().required().strict(),

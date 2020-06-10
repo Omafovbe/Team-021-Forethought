@@ -6,7 +6,7 @@ const app = require('./app');
 const apiPort = process.env.PORT || 4001;
 
 // Database connection
-// require('./services/dbCon');
+require('./services/dbCon');
 
 
 // Start listening to the app port to handle request
