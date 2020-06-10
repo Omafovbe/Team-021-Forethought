@@ -4,15 +4,17 @@ const path = require('path');
 
 // const jwt = require('./services/auth');
 
+// Frontend Routes
+const authRoute = require('./routes/auth');
+
 // API Routes
+
 const testRouter = require('./routes/test');
 const usersRoute = require('./routes/users');
 const consultantsRoute = require('./routes/consultants');
 const appointmentRoute = require('./routes/appointment');
 
-
-// Frontend Routes
-const userUI = require('./routes/auth');
+// const userUI = require('./routes/auth');
 
 const app = express();
 
@@ -20,6 +22,9 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 // Test routes
 app.use('/api/test', testRouter);
@@ -34,8 +39,8 @@ app.use('/api/appointments', appointmentRoute);
 
 app.get('/', (req, res) => res.send('#BuildForSDG'));
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.use(authRoute);
+
 app.use(express.static(path.join(__dirname, 'static')));
 
 app.get('/screening', (req, res) => {

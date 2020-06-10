@@ -2,14 +2,33 @@ const express = require('express');
 
 const router = express.Router();
 
+router.get('/users/auth', (req, res) => {
+    // console.log(req.query.isNew);
+    
+    res.render('auth', {
+        isNew: false,
+        url: '/api/users/authenticate',
+        user: true
+    });
+});
 
-router.get('/auth', (req, res) => {
-  // console.log(req.query.isNew);
-  const isNewQuery = Boolean(req.query.isNew);
+router.get('/users/register', (req, res) => {
+    res.render('auth', {
+        isNew: true,
+        url: '/api/users/register',
+        user: true
+    });
+})
 
-  res.render('auth', {
-    isNew: isNewQuery
-  });
+router.get('/consultants/auth', (req, res) => {
+    // console.log(req.query.isNew);
+    
+    res.render('auth', {
+        isNew: false,
+        url: '/api/consultants/authenticate',
+        user: false
+    });
+
 });
 
 module.exports = router;
