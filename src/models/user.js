@@ -13,8 +13,8 @@ const userSchema = new Schema({
   phone: { type: String, required: true },
   location: { type: String },
   birthDate: Date,
-  userLatitude: { type: Number, default: 0.00 },
-  userLongitude: { type: Number, default: 0.00 }
+  userLatitude: { type: Number, default: 0 },
+  userLongitude: { type: Number, default: 0 }
 },
 { timestamps: true });
 
