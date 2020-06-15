@@ -93,10 +93,19 @@ const messagesByConsultant = async ({ userId, consultantId }) => {
   return conversations;
 };
 
+const getById = async (reqId) => {
+  const user = await User.findById(reqId, { password: 0 });
+  if (!user) throw new Error('user ID needed to access this page');
+
+  return user;
+};
+
+
 module.exports = {
   authenticate,
   create,
   groupByConsultant: contactedConsultant,
   addMessage,
-  messagesByConsultant
+  messagesByConsultant,
+  getById
 };

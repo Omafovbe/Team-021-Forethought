@@ -6,6 +6,7 @@
     "messageSchema",
     "Backend-Test",
     "backend-sever",
-    "authObject"
+    "authObject",
+    "test-screen"
   ]
 }

@@ -9,7 +9,7 @@ const { vUser, vLogin } = require('../services/validation');
 // Authenticate user login
 const login = (req, res, next) => {
   userHandler.authenticate(req.body)
-    .then((user) => (user ? res.redirect('/screening') : res.status(400).json({ message: 'Email or password is incorrect' })))
+    .then((user) => (user ? res.redirect(`/users/${user.userId}/screening`) : res.status(400).json({ message: 'Email or password is incorrect' })))
     .catch((error) => next(error));
 };
 
@@ -17,9 +17,9 @@ const login = (req, res, next) => {
 const register = (req, res, next) => {
   userHandler.create(req.body)
     .then((user) => {
-      res.local = user;
+      res.locals = user;
       // res.json({ message: 'User registered successfully' })
-      res.redirect('/screening');
+      res.redirect(`/user/${user.userId}/screening`);
     })
     .catch((error) => next(error));
 };
@@ -50,5 +50,6 @@ router.post('/register', validateMW(vUser), register);
 router.post('/message', insertMessage);
 router.post('/get-messages', getMessages);
 router.get('/group/:id', getContactedConsultants);
+
 
 module.exports = router;
