@@ -142,6 +142,11 @@ div#buildforsdgs-patients{
   background-color: var(--buildforsdgs-primary-light-color);
 }
 
+div.buildforsdgs-console-patients{
+  color: white;
+  background-color: var(--buildforsdgs-primary-light-color);
+}
+
 div#buildforsdgs-connections{
   color: white;
   background-color: #e9692c;
