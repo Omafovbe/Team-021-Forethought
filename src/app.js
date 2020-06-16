@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const flash = require('express-flash');
+const session = require('express-session');
+
 
 // const jwt = require('./services/auth');
 
@@ -23,6 +26,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 
+app.use(session({
+  secret: process.env.SECRET,
+  saveUninitialized: true,
+  resave: true,
+  cookie: { maxAge: 6000 }
+}));
+
+app.use(flash());
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -39,13 +51,14 @@ app.use('/api/appointments', appointmentRoute);
 
 app.get('/', (req, res) => res.send('#BuildForSDG'));
 
+
 app.use(authRoute);
 
 app.use(express.static(path.join(__dirname, 'static')));
 
-app.get('/screening', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views/interactive', 'index.html'));
-});
+// app.get('/screening', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'views/interactive', 'index.html'));
+// });
 
 module.exports = app;
 
