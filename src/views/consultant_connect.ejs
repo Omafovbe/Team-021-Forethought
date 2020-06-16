@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('./partials/header.ejs') %>
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/consultant_connect.css">
+  <title>Connect with a specialist</title>
+</head>
+
+<body>
+  <%- include('./partials/nav.ejs') %>
+  <main>
+    <div class="container">
+      <div class="buildforsdgs-consultant-connect-header">
+        <h5 class="consultant-connect-header">Connect with a Consultant</h5>
+      </div>
+      <div class="row">
+        <% for(let i = 0; i < 6; i++) { %>
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="buildforsdgs-consultant-details">
+              <div class="buildforsdgs-consultant-picture">
+                <img src="<%= '/assets/images/consultant.jpg' %>" alt="consultant picture"
+                  class="buildforsdgs-consultant-picture">
+              </div>
+              <div class="buildforsdgs-consultant-text text-center">
+                <h4 class="buildforsdgs-consultant-name"><%= 'Jane Doe' %></h4>
+                <h6 class="buildforsdgs-consultant-credentials"><%= 'MBBS | FWACP | Ph.D' %></h6>
+                <p class="buildforsdgs-consultant-location"><%= 'Child and Adolescent Psychiatry, University College Hospital, Yemetu, Ibadan' %></p>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

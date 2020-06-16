@@ -47,7 +47,7 @@ a:hover{
 }
 
 .buildforsdgs-sidebar-right{
-    /* background-color: var(--buildforsdgs-default-color); */
+    background-color: var(--buildforsdgs-default-color);
 }
 
 .buildforsdgs-avatar{
@@ -83,7 +83,7 @@ a:hover{
 }
 
 .buildforsdgs-console-card{
-    background-color: rgba(250, 250, 250);
+    background-color: white;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -91,6 +91,25 @@ a:hover{
     /* border: 1px solid rgba(0, 0, 0, 0.05); */
     border-radius: 8px;    
     /* box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05); */
+}
+
+.buildforsdgs-console-image{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 16px 0 0;
+}
+
+.buildforsdgs-console-details{
+  padding: 16px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 300ms ease-out, box-shadow 300ms ease-out;
+}
+
+.buildforsdgs-console-details:hover{
+  cursor: pointer;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
 }
 
 .buildforsdgs-main-info{
@@ -118,88 +137,107 @@ a:hover{
     color: var(--buildforsdgs-primary-light-color);
 }
 
-.vertical-flex-centered{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    align-items: center;
+div#buildforsdgs-patients{
+  color: white;
+  background-color: var(--buildforsdgs-primary-light-color);
 }
 
-.horizontal-flex-centered{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
+div#buildforsdgs-connections{
+  color: white;
+  background-color: #e9692c;
 }
 
-.buildforsdgs-quick-cards{
-    width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
+div.buildforsdgs-messages-container{
+  flex-basis: 80%;
+  flex-shrink: 0;
+  flex-grow: 4;
+  display: flex;
+  flex-flow: row nowrap;
 }
 
-.buildforsdgs-quick-card{
-    justify-content: center !important;
-    /* flex: 0 0 25%; */
-    margin-right: 16px;
-    background-color: var(--buildforsdgs-primary-dark-color);
-    color: rgba(255, 255, 255, 0.75);
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+div.buildforsdgs-messages{
+  height: 100%;
+  /* box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); */
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  align-items: center;
+  overflow: auto;
+  flex-grow: 4;
+  flex-shrink: 0;
+  flex-basis: 90%;
 }
 
-.buildforsdgs-quick-card-number{
-    font-size: 13px;
-    font-weight: 300;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* font-size: 100px; */
-    /* line-height: 0.9; */
-    vertical-align: center;
+div.buildforsdgs-messages-panel{
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  flex-shrink: 1;
+  flex-basis: 10%;
+  flex-grow: 1;
+  padding: 4px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
-.buildforsdgs-quick-card-text{
-    font-size: 13px;
-    font-weight: 300;
-    margin-left: 4px;
-    font-family: 'Lato', 'Segoe UI', sans-serif;
+div.buildforsdgs-messages-panel > img{
+  width: 32px;
+  height: 32px;
+  border-radius: 25%;
+  padding: 4px;
 }
 
-#buildforsdgs-connections{
-    background-color: var(--buildforsdgs-accent-color);
+div.buildforsdgs-message{
+  width: 100%;
+  font-size: 10px;
+  padding: 12px;
+  /* background-color: rgb(250, 250, 250); */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
 }
 
-#buildforsdgs-appointments{
-    background-color: var(--buildforsdgs-primary-light-color);
+div.buildforsdgs-message p{
+  font-size: 11px;
+  color: var(--buildforsdgs-muted-color);
 }
 
-.buildforsdgs-patients{
-    /* background-color: white; */
-    border-radius: 8px;
+p.buildforsdgs-message-header{
+  font-weight: 700;
+  color: #e9692c !important;
 }
 
-.buildforsdgs-patients-header{
-    width: 100%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    background-color: var(--buildforsdgs-primary-light-color);
-    padding: 8px 16px;
-    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+div.buildforsdgs-type-message{
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  flex-basis: 20%;
+  flex-shrink: 1;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
 }
 
-p.buildforsdgs-patients-header-text{
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.75);
+div.buildforsdgs-type-message > * {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 4px;
+  font-size: 12px;
 }
 
-.buildforsdgs-patients-detail{
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    margin: 8px 16px;
+textarea#yourMessage{
+  flex-grow: 3;
 }
 
-.buildforsdgs-patients-detail > p{
-    flex-basis: 25%;
-    font-size: 13px;
+button.buildforsdgs-button{
+  color: white;
+  background-color: var(--buildforsdgs-primary-light-color);
+  flex-basis: 15%;
+  border-radius: 8px;
+}
+
+button.buildforsdgs-button:hover{
+  background-color: var(--buildforsdgs-primary-dark-color);
+}
+
+button.buildforsdgs-button:active{
+  border: 2px solid var(--buildforsdgs-primary-dark-color);
 }

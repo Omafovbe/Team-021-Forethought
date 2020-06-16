@@ -1,7 +1,6 @@
-barebones setup for JavaScript / Node projects replace this with a one-liner phrase describing this project or app
+Project Forethought
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/df72a22636f1460b9a10c55f0898ab8c)](https://app.codacy.com/gh/BuildForSDG/Team-021-Forethought?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDG/Team-021-Forethought&utm_campaign=Badge_Grade_Settings)
-
 
 ## About
 
@@ -18,7 +17,6 @@ This project tackles the third sustainable development goal of good health and w
 
 ## Usage
 Users are to log on to the url provided:
-
 
 ## Setup
 
@@ -45,17 +43,18 @@ This starter uses [Parcel](https://parceljs.org/getting_started.html) as the bun
 
 List the team behind this project. Their names linked to their Github, LinkedIn, or Twitter accounts should siffice. Ok to signify the role they play in the project, including the TTL and mentor
 
-##### Adeyosola Mustapha - https://github.com/Adeyossy - Team Technical Lead, Frontend Lead, UI/UX Designer
-##### Omafovbe Imonikosaye - https://github.com/Omafovbe - Assistant TTL, Backend Lead
-##### Frederick Atabo - https://github.com/fredatabo - Backend Developer
-##### Farouq Umar - https://github.com/farouqu - Backend Developer
-##### Olalekan Awe - https://github.com/awelekan - UI/UX Designer
-##### Oluwafemi Opanuga - https://github.com/femathic - UI/UX Designer
-##### Samuel Nwankwo - https://github.com/saminwankwo - Team Member (Frontend Developer)
-##### Muhammad - https://github.com/femathic - Team Member
+Adeyosola Mustapha - <https://github.com/Adeyossy> - Team Technical Lead, Frontend Lead, UI/UX Designer
+Omafovbe Imonikosaye - <https://github.com/Omafovbe> - Assistant TTL, Backend Lead
+Frederick Atabo - <https://github.com/fredatabo> - Backend Developer
+Farouq Umar - <https://github.com/farouqu> - Backend Developer
+Olalekan Awe - <https://github.com/awelekan> - UI/UX Designer
+Oluwafemi Opanuga - <https://github.com/femathic> - UI/UX Designer
+Samuel Nwankwo - <https://github.com/saminwankwo> - Team Member (Frontend Developer)
+Muhammad -  - Team Member
 
 
 ## Contributing
+
 If this project sounds interesting to you and you'd like to contribute, thank you!
 First, you can send a mail to buildforsdg@andela.com to indicate your interest, why you'd like to support and what forms of support you can bring to the table, but here are areas we think we'd need the most help in this project :
 1.  area one (e.g this app is about human trafficking and you need feedback on your roadmap and feature list from the private sector / NGOs)
@@ -71,5 +70,6 @@ Did someone’s blog post spark off a wonderful idea or give you a solution to n
 It's powerful to always give credit.
 
 ## LICENSE
+
 MIT
 
