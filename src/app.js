@@ -10,6 +10,15 @@ const session = require('express-session');
 // Frontend Routes
 const authRoute = require('./routes/auth');
 
+// import dashboard route module
+const dashboardRoute = require('./routes/dashboard');
+
+// import consultant_connect module
+const consultantConnect = require('./routes/consultant_connect');
+
+// import extras module
+const extrasRoute = require('./routes/extras');
+
 // API Routes
 
 const testRouter = require('./routes/test');
@@ -53,6 +62,15 @@ app.get('/', (req, res) => res.send('#BuildForSDG'));
 
 
 app.use(authRoute);
+
+// use dashboard route
+app.use(dashboardRoute);
+
+// use consultant_connect route
+app.use(consultantConnect);
+
+// use extras route
+app.use(extrasRoute);
 
 app.use(express.static(path.join(__dirname, 'static')));
 
