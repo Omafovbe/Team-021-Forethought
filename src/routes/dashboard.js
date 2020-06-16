@@ -8,5 +8,20 @@ router.get('/consultants/dashboard', (req, res) => {
   res.render('dashboard');
 });
 
+router.get('/consultants/dashboard/patients', (req, res) => {
+  // query the database to find patients
+  res.render('patients');
+});
+
+router.get('/consultants/dashboard/appointments', (req, res) => {
+  // query the database to find appointments
+  res.render('appointments');
+});
+
+router.get('/consultants/dashboard/connections', (req, res) => {
+  // query the database to find connections
+  res.render('connections');
+});
+
 // export router
 module.exports = router;
