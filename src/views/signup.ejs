@@ -1,17 +1,18 @@
 <div class="buildforsdgs-auth-card">
-    <h5 class="text-center buildforsdgs-auth-header">Create Account</h5>
-    <form class="" method="POST" action="<%= url %>">
-        <label for="username">Username</label>
-        <input type="text" name="username" pattern="\w+-?\w*" minlength="4" maxlength="20" id="username" required>
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" pattern=".+@\w+\.\w+" required>
-        <label for="choosePassword">Choose Password</label>
-        <input type="password" name="choosePassword" id="choosePassword" required>
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" name="confirmPassword" id="confirmPassword" required>
-        <input type="submit" value="Submit">
-    </form>
-    <% if(user) { %>
-        <h6>Already have an account? <a href="/users/auth" class="clickable">Log In</a></h6>
-    <% } %>
+  <h5 class="text-center buildforsdgs-auth-header">Create Account</h5>
+  <% expressFlash %>
+  <form class="" method="POST" action="<%= url %>">
+    <label for="username">Username</label>
+    <input type="text" name="username" pattern="\w+-?\w*" minlength="4" maxlength="20" id="username" required />
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" pattern=".+@\w+\.\w+" required />
+    <label for="choosePassword">Choose Password</label>
+    <input type="password" name="choosePassword" id="choosePassword" required />
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" name="confirmPassword" id="confirmPassword" required />
+    <input type="submit" value="Submit" />
+  </form>
+  <% if(user) { %>
+  <h6>Already have an account? <a href="/users/auth" class="clickable">Log In</a></h6>
+  <% } %>
 </div>

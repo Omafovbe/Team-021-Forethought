@@ -17,7 +17,14 @@ const authenticate = async ({ email, password }) => {
     token = jwt.sign({ id: user._id }, process.env.JWT_PRIVATE_KEY, { expiresIn: '1h' });
   }
 
-  return { userId, token };
+  return {
+    userId,
+    firstname: user.firstname,
+    lastname: user.lastname,
+    phone: user.phone,
+    email: user.email,
+    token
+  };
 };
 
 
@@ -27,13 +34,20 @@ const create = async (reqParam) => {
   if (user) throw new Error('User already registered');
 
   try {
-    user = new User(_.pick(reqParam, ['firstname', 'lastname', 'email', 'password', 'location', 'phone', 'birth_date']));
+    user = new User(_.pick(reqParam, ['firstname', 'lastname', 'email', 'password', 'phone']));
 
     // Hash user's password
     user.password = await bcrypt.hash(user.password, 10);
 
     // Save to database
-    await user.save();
+    const savedUser = await user.save();
+    return {
+      firstname: savedUser.firstname,
+      lastname: savedUser.lastname,
+      email: savedUser.email,
+      phone: savedUser.phone,
+      userId: savedUser._id
+    };
   } catch (error) {
     throw new Error(`User could not be saved - ${error}`);
   }
@@ -79,10 +93,19 @@ const messagesByConsultant = async ({ userId, consultantId }) => {
   return conversations;
 };
 
+const getById = async (reqId) => {
+  const user = await User.findById(reqId, { password: 0 });
+  if (!user) throw new Error('user ID needed to access this page');
+
+  return user;
+};
+
+
 module.exports = {
   authenticate,
   create,
   groupByConsultant: contactedConsultant,
   addMessage,
-  messagesByConsultant
+  messagesByConsultant,
+  getById
 };

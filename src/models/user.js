@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 
 const { Schema } = mongoose;
 
@@ -11,10 +11,10 @@ const userSchema = new Schema({
   },
   password: { type: String, required: true },
   phone: { type: String, required: true },
-  location: { type: String, required: true },
+  location: { type: String },
   birthDate: Date,
-  userLatitude: { type: Number, required: true },
-  userLongitude: { type: Number, required: true }
+  userLatitude: { type: Number, default: 0 },
+  userLongitude: { type: Number, default: 0 }
 },
 { timestamps: true });
 

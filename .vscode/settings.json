@@ -5,6 +5,8 @@
     "API-Routes",
     "messageSchema",
     "Backend-Test",
-    "backend-sever"
+    "backend-sever",
+    "authObject",
+    "test-screen"
   ]
 }
