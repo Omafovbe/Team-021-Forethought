@@ -1,14 +1,14 @@
 const express = require('express');
 
 const router = express.Router();
-const { vConsultant } = require('../services/validation');
+const { vConsultant, vLogin } = require('../services/validation');
 const validateMW = require('../services/validate');
 const consultant = require('../controller/consultantCtrl');
 
 // Authenticate login
 const login = (req, res, next) => {
   consultant.authenticate(req.body)
-    .then((token) => (token ? res.json(token) : res.status(400).json({ message: 'Email or password is incorrect' })))
+    .then((token) => (token ? res.redirect('/consultants/dashboard') : res.status(400).json({ message: 'Email or password is incorrect' })))
     .catch((error) => next(error));
 };
 
@@ -39,7 +39,7 @@ const getMessages = (req, res) => {
 };
 
 // Consultant Routes
-router.post('/authenticate', validateMW(vConsultant), login);
+router.post('/authenticate', validateMW(vLogin), login);
 
 router.post('/register', validateMW(vConsultant), register);
 router.post('/message', insertMessage);

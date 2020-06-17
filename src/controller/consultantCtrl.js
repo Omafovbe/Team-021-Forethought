@@ -8,20 +8,24 @@ const Consultant = require('../models/consultant');
 
 const authenticate = async ({ email, password }) => {
   const consultant = await Consultant.findOne({ email });
-  const consultantId = consultant._id;
+
   let token = '';
+  let tokenizeConsultant = '';
   if (consultant && bcrypt.compare(password, consultant.password)) {
+    const consultantId = consultant._id;
     token = jwt.sign({ id: consultant._id }, process.env.JWT_PRIVATE_KEY, { expiresIn: '1h' });
+
+    tokenizeConsultant = {
+      consultantId,
+      firstname: consultant.firstname,
+      lastname: consultant.lastname,
+      phone: consultant.phone,
+      email: consultant.email,
+      token
+    };
   }
 
-  return {
-    consultantId,
-    firstname: consultant.firstname,
-    lastname: consultant.lastname,
-    phone: consultant.phone,
-    email: consultant.email,
-    token
-  };
+  return tokenizeConsultant;
 };
 
 const create = async (reqParam) => {
