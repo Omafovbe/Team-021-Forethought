@@ -13,7 +13,7 @@ const authenticate = async ({ email, password }) => {
   const user = await User.findOne({ email });
   const userId = user._id;
   let token = '';
-  if (user && bcrypt.compareSync(password, user.password)) {
+  if (user && bcrypt.compare(password, user.password)) {
     token = jwt.sign({ id: user._id }, process.env.JWT_PRIVATE_KEY, { expiresIn: '1h' });
   }
 
