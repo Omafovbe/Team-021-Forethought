@@ -17,7 +17,8 @@
     "test:watch": "jest --watch",
     "test:cover": "jest --coverage",
     "lint": "eslint \"src/**/*.js\"",
-    "start": "nodemon"
+    "start": "cd src && node server.js",
+    "start-dev": "nodemon"
   },
   "author": {
     "name": "Build For SDG",
