@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('./partials/header.ejs') %>
+  <link rel="stylesheet" type="text/css" href="/css/console.css">
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3 d-none d-lg-flex buildforsdgs-sidebar-left buildforsdgs-centering">
+          <div class="buildforsdgs-consultant-bio">
+            <%- include('./partials/avatar.ejs') %>
+          </div>
+        </div>
+        <div class="col-lg-6 buildforsdgs-main-info buildforsdgs-centering">
+          <div class="buildforsdgs-action-bar buildforsdgs-console-card">
+            <a href="/">Home</a>
+            <div class="buildforsdgs-icon">
+              <span class="material-icons">notifications</span>
+            </div>
+          </div>
+          <div class="buildforsdgs-console-details buildforsdgs-console-card" id="buildforsdgs-patients">
+            <img src="/assets/images/sea.jpg" alt="consultant avatar" class="buildforsdgs-console-image">
+            <div class="consultant-profile-details">
+              <h3 class="consultant-profile-name mb-0">Patients</h3>
+              <h4 class="consultant-profile-hospital mb-0">Information about your patients is found here. Below is a
+                brief summary</h4>
+              <p class="consultant-profile-credentials mb-0">
+                <span class="consultant-profile-credential"><%= "1 patient" %></span>
+              </p>
+            </div>
+          </div>
+          <div class="buildforsdgs-console-details buildforsdgs-console-card" id="buildforsdgs-appointments">
+            <img src="/assets/images/time.jpg" alt="consultant avatar" class="buildforsdgs-console-image">
+            <div class="consultant-profile-details">
+              <h3 class="consultant-profile-name mb-0">Appointments</h3>
+              <h4 class="consultant-profile-hospital mb-0">St Saint Specialist Hospital</h4>
+              <p class="consultant-profile-credentials mb-0">
+                <span class="consultant-profile-credential"><%= "0 appointment(s)" %></span>
+              </p>
+            </div>
+          </div>
+          <div class="buildforsdgs-console-details buildforsdgs-console-card" id="buildforsdgs-connections">
+            <img src="/assets/images/time-lapse.jpg" alt="consultant avatar" class="buildforsdgs-console-image">
+            <div class="consultant-profile-details">
+              <h3 class="consultant-profile-name mb-0">Connections</h3>
+              <h4 class="consultant-profile-hospital mb-0">Users who requested a connection with you are found here</h4>
+              <p class="consultant-profile-credentials mb-0">
+                <span class="consultant-profile-credential"><%= "1 connection(s)" %></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 buildforsdgs-sidebar-right buildforsdgs-centering d-none d-lg-flex">
+          <div class="buildforsdgs-messages-container">
+            <div class="buildforsdgs-messages buildforsdgs-console-card">
+              <div class="buildforsdgs-message">
+                <p class="buildforsdgs-message-header">ade120</p>
+                <p class="consultant-profile-hospital mb-0">Hello, I am Ade. I want to schedule an appointment with you. I have been feeling very sad lately and I may hurt myself because this feeling is terrible.</p>
+              </div>
+            </div>
+            <div class="buildforsdgs-messages-panel">
+              <img src="/assets/images/african-woman.jpg" alt="chat avatar" class="buildforsdgs-messages-panel-avatar d-block">
+            </div>
+          </div>
+          <div class="buildforsdgs-type-message">
+            <textarea name="yourMessage" id="yourMessage" cols="8" rows="3" placeholder="type your message"></textarea>
+            <button class="buildforsdgs-button">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<script src="/js/dashboard.js"></script>
+</html>

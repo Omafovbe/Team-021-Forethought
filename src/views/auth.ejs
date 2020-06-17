@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/header.ejs') %>
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/auth.css" />
+    <title>Login or Sign Up</title>
+  </head>
+  <body>
+    <!-- get nav component -->
+    <%- include('./partials/nav.ejs') %>
+    <main>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="offset-lg-1 col-lg-5 column-padding">
+            <div class="buildforsdgs-facts-card">
+              <img src="/assets/images/meditation.jpg" alt="therapeutic image" class="img-fluid" />
+              <h4 class="text-center text-white buildforsdgs-facts-card-info">Relax, help is a few clicks away</h4>
+            </div>
+          </div>
+          <div class="offset-lg-1 col-lg-4 column-padding">
+            <!-- <% if(isNew) %> -->
+            <% if(isNew) { %> <%- include('./signup.ejs') %> <% } else { %> <%- include('./login.ejs') %> <% } %>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="/js/auth.js"></script>
+  </body>
+</html>

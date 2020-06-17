@@ -1,0 +1,85 @@
+h6.buildforsdgs-homepage-feature-subheading-2{
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  word-spacing: 2px;
+}
+
+div.buildforsdgs-homepage-row{
+  min-height: 100vh;
+}
+
+div#buildforsdgs-homepage-description-row{
+  background-image: url('/assets/images/abstract.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.buildforsdgs-homepage-feature-header{
+  color: var(--buildforsdgs-primary-light-color);
+  font-weight: 900;
+}
+
+.buildforsdgs-homepage-description-subheading{
+  font-weight: 300;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.buildforsdgs-homepage-button{
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  border-radius: 6px;
+  padding: 16px 48px;
+}
+
+.buildforsdgs-homepage-button:hover{
+  background-color: var(--buildforsdgs-primary-light-color);
+  color: white;
+  border-color: var(--buildforsdgs-primary-dark-color);
+}
+
+button#buildforsdgs-homepage-feature-1-button{
+  border-color: var(--buildforsdgs-primary-light-color);
+  color: var(--buildforsdgs-primary-light-color);
+}
+
+button#buildforsdgs-homepage-feature-1-button:hover{
+  color: white;
+}
+
+.buildforsdgs-homepage-background{
+  height: 100%;
+  width: 100%;
+  background-image: url('/assets/images/support.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 2px 2px 12px var(--buildforsdgs-grey-color);
+}
+
+div#buildforsdgs-homepage-feature-1{
+  background-image: url('/assets/images/gray.jpg');
+  background-size: cover;
+}
+
+@media only screen and (min-width: 768px) { 
+  div.buildforsdgs-homepage-row{
+    min-height: 75vh;
+  }
+}
+
+@media only screen and (min-width: 1224px){
+  div.buildforsdgs-homepage-row{
+    min-height: 100vh;
+  }
+
+  .buildforsdgs-homepage-header{
+    font-size: 66px;
+  }
+
+  .buildforsdgs-homepage-background{
+    height: 80%;
+    width: 95%;
+  }
+}

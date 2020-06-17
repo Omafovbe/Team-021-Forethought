@@ -1,0 +1,72 @@
+body{
+  background-color: white;
+}
+
+.row{
+  min-height: 100vh;
+}
+
+.buildforsdgs-emergency{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.buildforsdgs-emergency-image{
+  background-image: url('/assets/images/blue-sea.jpg');
+  background-size: cover;
+  background-position: center;
+  flex: 1 1 30%;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.buildforsdgs-emergency-details{
+  flex: 3 0 70%;
+  padding: 32px 5%;
+}
+
+.buildforsdgs-emergency-header{
+  color: var(--buildforsdgs-primary-light-color);
+}
+
+.buildforsdgs-emergency-body{
+  margin: 40px 0;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.buildforsdgs-emergency-body-name{
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  color: var(--buildforsdgs-muted-color);
+}
+
+.buildforsdgs-emergency-button{
+  margin: 0 48px 8px 0;
+  border: 1px solid var(--buildforsdgs-lightgrey-color);
+  border-radius: 4px;
+  padding: 4px;
+  background-color: white;
+  color: inherit;
+}
+
+.buildforsdgs-emergency-button:hover{
+  color: white;
+  background-color: var(--buildforsdgs-primary-dark-color);
+  border: 1px solid var(--buildforsdgs-primary-dark-color);
+}
+
+@media only screen and (min-width: 992px){
+  body{
+    background-color: rgb(248, 248, 248);
+  }
+  
+  .row{
+    padding: 32px 0;
+  }
+
+  .buildforsdgs-emergency{
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}

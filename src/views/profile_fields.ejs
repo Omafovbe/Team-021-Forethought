@@ -1,0 +1,14 @@
+<div class="buildforsdgs-auth-card">
+    <h5 class="text-center buildforsdgs-auth-header">Edit Profile</h5>
+    <form class="" method="POST" action="/api/profile">
+        <label for="username">Name</label>
+        <input type="text" name="name" pattern="\w+-?\w*" value="<%= 'Jane Doe' %>" minlength="4" maxlength="20" id="username" required>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" value="<%= 'janedoe@mail.com' %>" pattern=".+@\w+\.\w+" required>
+        <label for="hospital">Hospital</label>
+        <input type="text" name="hospital" pattern="\w+-?\w*" value="<%= 'St Saint Hospital' %>" minlength="4" maxlength="100" id="hospital" required>
+        <label for="hospital-location">Hospital</label>
+        <input type="text" name="hospitalLocation" pattern="\w+-?\w*" value="<%= 'Solaris Building, Opposite Total Filling Station, Yemetu, Ibadan, Oyo State, Nigeria' %>" id="hospital-location" required>
+        <input type="submit" value="Submit">
+    </form>
+</div>

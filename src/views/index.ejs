@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('./partials/header.ejs') %>
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <title>Forethought</title>
+</head>
+
+<body>
+  <main>
+    <div class="container-fluid">
+      <div class="row buildforsdgs-homepage-row" id="buildforsdgs-homepage-description-row">
+        <div class="col-lg-12 p-0"><%- include('./partials/nav.ejs') %></div>
+        <div class="offset-lg-1 col-lg-5 offset-md-1 col-md-8 pt-5 pb-5">
+          <div class="buildforsdgs-homepage-description">
+            <h1 class="text-white buildforsdgs-homepage-header buildforsdgs-homepage-description-header mb-3">Access to
+              Mental Healthcare just got better</h1>
+            <h5 class="buildforsdgs-homepage-description-subheading mb-3">Get in touch with a mental health specialist
+            </h5>
+            <a href="/users/auth"><button class="text-white buildforsdgs-homepage-button">Connect</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="row buildforsdgs-homepage-row pt-5 pb-5" id="buildforsdgs-homepage-feature-1">
+        <div class="offset-lg-1 col-lg-5 col-md-6 vertical-flex-centered justify-content-center">
+          <div class="buildforsdgs-homepage-feature-description">
+            <h2 class="buildforsdgs-homepage-header buildforsdgs-homepage-feature-header text-black mb-3">Mental Illness
+              Affects:</h2>
+            <h6 class="buildforsdgs-homepage-subheading buildforsdgs-homepage-feature-subheading text-dark mb-3"><span
+                class="buildforsdgs-material-icons material-icons text-primary">fiber_manual_record</span>One in Four
+              persons at some point in their lifetime</h6>
+            <h6 class="buildforsdgs-homepage-subheading buildforsdgs-homepage-feature-subheading text-dark mb-3"><span
+                class="buildforsdgs-material-icons material-icons text-primary">fiber_manual_record</span>One in Ten
+              persons at any point in time</h6>
+            <a href="/users/auth"><button class="buildforsdgs-homepage-button"
+                id="buildforsdgs-homepage-feature-1-button">Reach Out for Help</button></a>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-6 vertical-flex-centered justify-content-center">
+          <div class="buildforsdgs-homepage-background"></div>
+        </div>
+      </div>
+      <div class="row pt-5 pb-5" id="buildforsdgs-homepage-feature-2">
+        <div class="offset-lg-2 col-lg-8 offset-md-1 col-md-10 vertical-flex-centered justify-content-center pt-5 pb-5 mt-5 mb-5">
+          <h2 class="buildforsdgs-homepage-feature-header-2 font-weight-bold text-center mb-3">Suicide Emergency Hotlines</h2>
+          <h6 class="buildforsdgs-homepage-feature-subheading-2 text-muted mb-3">Feeling like hurting yourself? Click below to get immediate help from available government services.</h6>
+          <a href="/emergency"><button class="buildforsdgs-homepage-button text-center"
+            id="buildforsdgs-homepage-feature-1-button">Emergency Help</button></a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

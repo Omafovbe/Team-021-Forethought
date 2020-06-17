@@ -1,0 +1,13 @@
+{
+  "conventionalCommits.scopes": [
+    "MongoDB",
+    "MentalTest",
+    "API-Routes",
+    "messageSchema",
+    "Backend-Test",
+    "backend-sever",
+    "authObject",
+    "test-screen",
+    "user-login"
+  ]
+}
