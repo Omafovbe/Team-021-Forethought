@@ -58,7 +58,7 @@ app.use('/api/users', usersRoute);
 app.use('/api/consultants', consultantsRoute);
 app.use('/api/appointments', appointmentRoute);
 
-app.get('/', (req, res) => res.send('#BuildForSDG'));
+app.get('/', (req, res) => res.render('index'));
 
 
 app.use(authRoute);
