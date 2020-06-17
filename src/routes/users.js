@@ -19,7 +19,7 @@ const register = (req, res, next) => {
     .then((user) => {
       res.locals = user;
       // res.json({ message: 'User registered successfully' })
-      res.redirect(`/user/${user.userId}/screening`);
+      res.redirect(`/users/${user.userId}/screening`);
     })
     .catch((error) => next(error));
 };

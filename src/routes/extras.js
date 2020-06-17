@@ -5,4 +5,8 @@ router.get('/emergency', (req, res) => {
   res.render('emergency');
 });
 
+router.get('/about', (req, res) => {
+  res.render('about');
+})
+
 module.exports = router;
