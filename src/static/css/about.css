@@ -1,9 +1,7 @@
-nav#buildforsdgs-nav{
-  background-color: transparent;
-}
-
-nav#buildforsdgs-nav a{
-  color: white;
+h6.buildforsdgs-homepage-feature-subheading-2{
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  word-spacing: 2px;
 }
 
 div.buildforsdgs-homepage-row{
