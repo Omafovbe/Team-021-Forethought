@@ -58,7 +58,13 @@ app.use('/api/users', usersRoute);
 app.use('/api/consultants', consultantsRoute);
 app.use('/api/appointments', appointmentRoute);
 
-app.get('/', (req, res) => res.send('#BuildForSDG'));
+app.get('/', (req, res) => {
+  res.render('auth', {
+    isNew: false,
+    url: '/api/users/authenticate',
+    user: true
+  });
+});
 
 
 app.use(authRoute);
